@@ -11,13 +11,13 @@ from flask import Flask, jsonify, render_template, request
 app = Flask(__name__)
 
 # Set your OpenAI API key
-openai.api_key = os.environ["OPENAI_API_KEY"]
+openai.api_key = "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"
 response_data = ""
 
 # If Neo4j credentials are set, then Neo4j is used to store information
-neo4j_username = os.environ.get("NEO4J_USERNAME")
-neo4j_password = os.environ.get("NEO4J_PASSWORD")
-neo4j_url = os.environ.get("NEO4J_URL")
+neo4j_username = "neo4j"
+neo4j_password = "OT9M5CwzSKcBM-tv3JjjxrDD9RZAnIcbsOrRuMQNHnc"
+neo4j_url = "neo4j+s://1b04dc65.databases.neo4j.io"
 neo4j_driver = None
 if neo4j_username and neo4j_password and neo4j_url:
     neo4j_driver = GraphDatabase.driver(
